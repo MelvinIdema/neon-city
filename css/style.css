@@ -1,3 +1,8 @@
+@font-face {
+  font-family: samurai-font;
+  src: url(../fonts/FunnySamurai.otf) format('opentype');
+}
+
 html, body {
   height: 100%;
   width: 100%;
@@ -22,7 +27,6 @@ main {
   height: 10px;
   border-radius: 100%;
   position: absolute;
-  background: white;
   transform: translate(-50%, -50%);
 }
 
@@ -40,34 +44,22 @@ main {
   top: 49.5%;
   left: 63.5%;
 }
-.bram {
-    margin: 0;
-    padding: 0;
-}
 
-.bram > main {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.bram > main > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 6em;
-    margin: 2em;
-    background: hsl(0, 0%, 0%);
+body > main > .bram {
+    display: grid;
+    place-items: center;
+    left: 49.5%;
+    top: 24%;
+    width: 24%;
+    height: 20%;
     animation: boxFlicker 1.5s infinite alternate;
     border-radius: 1em;
     box-shadow: 0 0 0.1vw  0.4vw hsl(131, 91%, 47%), 0 0 1.5vw  0.4vw hsl(131, 91%, 47%);
 }
 
-.bram > main > div > h1 {
-    text-align: center;
-    margin: 0 auto;
-    font-family: 'Lexend', sans-serif;
+body > main > .bram > span {
+    font-size: 3em;
+    font-family: samurai-font, sans-serif;
     letter-spacing: 0.1em;
     animation: textFlicker 1.5s infinite alternate;
     text-transform: uppercase;
@@ -89,8 +81,8 @@ main {
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
   
         text-shadow:
-        0 0 4px hsl(115, 100%, 92%),
-        0 0 11px hsl(115, 100%, 92%),
+        0 0 1em hsl(115, 100%, 92%),
+        0 0 2em hsl(115, 100%, 92%),
         0 0 19px hsl(115, 100%, 92%),
         0 0 40px hsl(126, 86%, 65%),
         0 0 80px hsl(126, 86%, 65%),
