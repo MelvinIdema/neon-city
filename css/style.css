@@ -77,8 +77,15 @@ main {
 
   animation-name: rotateHue;
   animation-iteration-count: infinite;
-  animation-duration: 10s;
+  animation-duration: 5s;
   user-select: none;
+}
+
+.melvin:hover {
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
 }
 
 #melvin:checked + .melvin {
@@ -147,5 +154,23 @@ main {
   }
   100% {
     filter: hue-rotate(360deg);
+  }
+}
+
+/* https://css-tricks.com/how-to-create-neon-text-with-css/ */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    color: var(--glow-color);
+    box-shadow:
+        0 0 .0625rem #fff,
+        inset 0 0 .125rem #fff,
+        0 0 .25rem var(--glow-color),
+        inset 0 0 .25rem var(--glow-color),
+        0 0 .5rem var(--glow-color),
+        inset 0 0 .5rem var(--glow-color);
+  }
+  20%, 24%, 55% {
+    box-shadow: none;
+    color: black;
   }
 }
