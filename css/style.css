@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+    --D-border: white;
+    --D-neon: blue;
+    --D-inner-highlight: inset 0 0 2em #4b7a8d;
+    --D-highlight: 0 0 2em #4b7a8d;
+    --D-highlight-hover: 0 0 4em #4b7a8d;
+    --D-text-highlight: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em #4b7a8d;
+}
+
+@font-face {
+    font-family: Street Tahoma;
+    src: url(/fonts/HIROSHT.TTF);
+}
 
 html, body {
   height: 100%;
@@ -36,6 +55,7 @@ main {
 }
 
 .dave {
+    position: relative;
   left: 28%;
   top: 16%;
 }
@@ -48,8 +68,6 @@ main {
   inset 0 0 .5rem var(--glow-color),
   0 0 1rem var(--glow-color),
   inset 0 0 1rem var(--glow-color);
-
-  position: relative;
   display: grid;
   place-items: center;
   top: 49%;
@@ -173,4 +191,76 @@ main {
     box-shadow: none;
     color: black;
   }
+}
+
+.dave {
+    width: 10em;
+    height: 17em;
+    padding: 2em 3.3em;
+    box-shadow: var(--D-highlight);
+    border: .1em solid var(--D-border);
+    border-radius: .5em;
+}
+
+.dave:hover {
+    box-shadow: var(--D-highlight-hover), var(--D-inner-highlight);
+    animation: M-flicker 1.5s infinite alternate;
+}
+
+.dave:hover p {
+    animation: none;
+}
+
+.dave::before, .dave::after  {
+    content: "";
+    position: absolute;
+    left: -4.2em;
+    width: 4em;
+    height: .5em;
+    background-color: #263248;
+}
+
+.dave::before {
+    top: 1em;
+}
+
+.dave::after {
+    bottom: 1em;
+}
+
+.dave p {
+    font-family: Street Tahoma;
+    font-size: 3em;
+    text-align: center;
+    color: var(--D-neon);
+    text-shadow: var(--D-text-highlight); 
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    animation: rotateHue 3s infinite;
+}
+
+@keyframes rotateHue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes M-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {  
+        box-shadow:
+            0 0 .5em #fff,
+            inset 0 0 .5em #fff,
+            0 0 2em var(--D-neon),
+            inset 0 0 2em var(--D-neon),
+            0 0 4em var(--D-neon),
+            inset 0 0 4em var(--D-neon);        
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
 }
