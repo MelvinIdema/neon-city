@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
 html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   background-color: #01262F;
+  background-image: url("../assets/bg-empty.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -20,9 +26,8 @@ main {
 .melvin {
   width: 10px;
   height: 10px;
-  border-radius: 100%;
   position: absolute;
-  background: white;
+  transform: translate(-50%, -50%);
 }
 
 .bram {
@@ -36,6 +41,111 @@ main {
 }
 
 .melvin {
-  top: 49.5%;
-  left: 63.5%;
+  --glow-color: hsl(120, 61%, 50%);
+  --box-shadow: 0 0 .125rem #fff,
+  inset 0 0 .25rem #fff,
+  0 0 .5rem var(--glow-color),
+  inset 0 0 .5rem var(--glow-color),
+  0 0 1rem var(--glow-color),
+  inset 0 0 1rem var(--glow-color);
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  top: 49%;
+  left: 64%;
+  width: 23%;
+  height: 15%;
+
+  font-family: 'Raleway', cursive;
+  letter-spacing: .2em;
+  font-size: 3em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  border-radius: 6px;
+
+  color: var(--glow-color);
+
+  box-shadow:
+      0 0 .0625rem #fff,
+      inset 0 0 .125rem #fff,
+      0 0 .25rem var(--glow-color),
+      inset 0 0 .25rem var(--glow-color),
+      0 0 .5rem var(--glow-color),
+      inset 0 0 .5rem var(--glow-color);
+
+  animation-name: rotateHue;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  user-select: none;
+}
+
+#melvin:checked + .melvin {
+  animation: none;
+  box-shadow:
+      0 0 0rem #fff,
+      inset 0 0 .05rem #fff,
+      0 0 .125rem black,
+      inset 0 0 .125rem black,
+      0 0 .25rem black,
+      inset 0 0 .25rem black;
+  color: black;
+}
+
+#melvin {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+}
+
+@keyframes rotateHue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  19% {
+    filter: hue-rotate(69deg);
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+  }
+  20% {
+    box-shadow: none;
+    color: black;
+  }
+  21% {
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+    filter: hue-rotate(76deg);
+  }
+  22% {
+    filter: hue-rotate(80deg);
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+  }
+  23% {
+    box-shadow: none;
+    color: white;
+  }
+  24% {
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+    filter: hue-rotate(87deg);
+  }
+  54% {
+    filter: hue-rotate(195deg);
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+  }
+  55% {
+    box-shadow: none;
+    color: white;
+  }
+  56% {
+    filter: hue-rotate(202deg);
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
