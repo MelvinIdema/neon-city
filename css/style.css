@@ -23,6 +23,7 @@ main {
   border-radius: 100%;
   position: absolute;
   background: white;
+  transform: translate(-50%, -50%);
 }
 
 .bram {
