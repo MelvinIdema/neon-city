@@ -3,11 +3,36 @@
   src: url(../fonts/FunnySamurai.otf) format('opentype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+    --D-border: white;
+    --D-neon: blue;
+    --D-inner-highlight: inset 0 0 2em #4b7a8d;
+    --D-highlight: 0 0 2em #4b7a8d;
+    --D-highlight-hover: 0 0 4em #4b7a8d;
+    --D-text-highlight: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em #4b7a8d;
+}
+
+@font-face {
+    font-family: Street Tahoma;
+    src: url(/fonts/HIROSHT.TTF);
+}
+
 html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   background-color: #01262F;
+  background-image: url("../assets/bg-empty.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -25,7 +50,6 @@ main {
 .melvin {
   width: 10px;
   height: 10px;
-  border-radius: 100%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
@@ -36,13 +60,50 @@ main {
 }
 
 .dave {
+    position: relative;
   left: 28%;
   top: 16%;
 }
 
 .melvin {
-  top: 49.5%;
-  left: 63.5%;
+  --glow-color: hsl(120, 61%, 50%);
+  --box-shadow: 0 0 .125rem #fff,
+  inset 0 0 .25rem #fff,
+  0 0 .5rem var(--glow-color),
+  inset 0 0 .5rem var(--glow-color),
+  0 0 1rem var(--glow-color),
+  inset 0 0 1rem var(--glow-color);
+
+  display: grid;
+  place-items: center;
+
+  top: 49%;
+  left: 64%;
+  width: 23%;
+  height: 15%;
+
+  font-family: 'Raleway', cursive;
+  letter-spacing: .2em;
+  font-size: 3vw;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  border-radius: 6px;
+
+  color: var(--glow-color);
+
+  box-shadow:
+      0 0 .0625rem #fff,
+      inset 0 0 .125rem #fff,
+      0 0 .25rem var(--glow-color),
+      inset 0 0 .25rem var(--glow-color),
+      0 0 .5rem var(--glow-color),
+      inset 0 0 .5rem var(--glow-color);
+
+  animation-name: rotateHue;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  user-select: none;
 }
 
 body > main > .bram {
@@ -107,3 +168,169 @@ body > main > .bram > span {
         box-shadow: none;
     }    
   }
+
+.melvin:hover {
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+}
+
+#melvin:checked + .melvin {
+  animation: none;
+  box-shadow:
+      0 0 0rem #fff,
+      inset 0 0 .05rem #fff,
+      0 0 .125rem black,
+      inset 0 0 .125rem black,
+      0 0 .25rem black,
+      inset 0 0 .25rem black;
+  color: black;
+}
+
+#melvin {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+}
+
+@keyframes rotateHue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  19% {
+    filter: hue-rotate(69deg);
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+  }
+  20% {
+    box-shadow: none;
+    color: black;
+  }
+  21% {
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+    filter: hue-rotate(76deg);
+  }
+  22% {
+    filter: hue-rotate(80deg);
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+  }
+  23% {
+    box-shadow: none;
+    color: white;
+  }
+  24% {
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+    filter: hue-rotate(87deg);
+  }
+  54% {
+    filter: hue-rotate(195deg);
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+  }
+  55% {
+    box-shadow: none;
+    color: white;
+  }
+  56% {
+    filter: hue-rotate(202deg);
+    box-shadow: var(--box-shadow);
+    color: var(--glow-color);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* https://css-tricks.com/how-to-create-neon-text-with-css/ */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    color: var(--glow-color);
+    box-shadow:
+        0 0 .0625rem #fff,
+        inset 0 0 .125rem #fff,
+        0 0 .25rem var(--glow-color),
+        inset 0 0 .25rem var(--glow-color),
+        0 0 .5rem var(--glow-color),
+        inset 0 0 .5rem var(--glow-color);
+  }
+  20%, 24%, 55% {
+    box-shadow: none;
+    color: black;
+  }
+}
+
+.dave {
+    width: 10em;
+    height: 17em;
+    padding: 2em 3.3em;
+    box-shadow: var(--D-highlight);
+    border: .1em solid var(--D-border);
+    border-radius: .5em;
+}
+
+.dave:hover {
+    box-shadow: var(--D-highlight-hover), var(--D-inner-highlight);
+    animation: M-flicker 1.5s infinite alternate;
+}
+
+.dave:hover p {
+    animation: none;
+}
+
+.dave::before, .dave::after  {
+    content: "";
+    position: absolute;
+    left: -4.2em;
+    width: 4em;
+    height: .5em;
+    background-color: #263248;
+}
+
+.dave::before {
+    top: 1em;
+}
+
+.dave::after {
+    bottom: 1em;
+}
+
+.dave p {
+    font-family: Street Tahoma;
+    font-size: 3em;
+    text-align: center;
+    color: var(--D-neon);
+    text-shadow: var(--D-text-highlight); 
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    animation: rotateHue 3s infinite;
+}
+
+@keyframes rotateHue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes M-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {  
+        box-shadow:
+            0 0 .5em #fff,
+            inset 0 0 .5em #fff,
+            0 0 2em var(--D-neon),
+            inset 0 0 2em var(--D-neon),
+            0 0 4em var(--D-neon),
+            inset 0 0 4em var(--D-neon);        
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
+}
