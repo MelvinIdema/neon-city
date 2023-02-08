@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 @font-face {
   font-family: samurai-font;
   src: url(../fonts/FunnySamurai.otf) format('opentype');
+}
+
+@font-face {
+  font-family: sakurata;
+  src: url(../fonts/Sakurata-DOGnE.otf) format('opentype');
 }
 
 * {
@@ -65,47 +68,6 @@ main {
   top: 16%;
 }
 
-.melvin {
-  --glow-color: hsl(120, 61%, 50%);
-  --box-shadow: 0 0 .125rem #fff,
-  inset 0 0 .25rem #fff,
-  0 0 .5rem var(--glow-color),
-  inset 0 0 .5rem var(--glow-color),
-  0 0 1rem var(--glow-color),
-  inset 0 0 1rem var(--glow-color);
-
-  display: grid;
-  place-items: center;
-
-  top: 49%;
-  left: 64%;
-  width: 23%;
-  height: 15%;
-
-  font-family: 'Raleway', cursive;
-  letter-spacing: .2em;
-  font-size: 3vw;
-  text-transform: uppercase;
-
-  cursor: pointer;
-  border-radius: 6px;
-
-  color: var(--glow-color);
-
-  box-shadow:
-      0 0 .0625rem #fff,
-      inset 0 0 .125rem #fff,
-      0 0 .25rem var(--glow-color),
-      inset 0 0 .25rem var(--glow-color),
-      0 0 .5rem var(--glow-color),
-      inset 0 0 .5rem var(--glow-color);
-
-  animation-name: rotateHue;
-  animation-iteration-count: infinite;
-  animation-duration: 5s;
-  user-select: none;
-}
-
 body > main > .bram {
     display: grid;
     place-items: center;
@@ -157,12 +119,39 @@ body > main > .bram > span {
     }    
   }
 
+.melvin {
+  --glow-color: hsl(120, 61%, 50%);
+  mix-blend-mode: screen;
 
-.melvin:hover {
-  animation-name: flicker;
+  color: var(--glow-color);
+  --box-shadow: 0 0 .125rem #fff,
+  inset 0 0 .25rem #fff,
+  0 0 .5rem currentColor,
+  inset 0 0 .5rem currentColor,
+  0 0 1rem currentColor,
+  inset 0 0 1rem currentColor;
+
+  display: grid;
+  place-items: center;
+
+  top: 49%;
+  left: 64%;
+  width: 23%;
+  height: 15%;
+
+  font-family: 'Sakurata', cursive;
+  letter-spacing: .2em;
+  font-size: 2vw;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  border-radius: 6px;
+
+  box-shadow: var(--box-shadow);
+  animation-name: rotateHue;
   animation-iteration-count: infinite;
-  animation-duration: 1.5s;
-  animation-direction: alternate;
+  animation-duration: 5s;
+  user-select: none;
 }
 
 #melvin:checked + .melvin {
@@ -175,12 +164,20 @@ body > main > .bram > span {
       0 0 .25rem black,
       inset 0 0 .25rem black;
   color: black;
+  mix-blend-mode: color-burn;
 }
 
 #melvin {
   position: absolute;
   top: -1000px;
   left: -1000px;
+}
+
+.melvin:hover {
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
 }
 
 @keyframes rotateHue {
