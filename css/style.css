@@ -95,3 +95,15 @@ body > main > .bram > span {
         text-shadow: none;
     }    
   }
+
+  @keyframes boxFlicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+      box-shadow: 0 0 0.1vw  0.4vw hsl(131, 91%, 47%), 0 0 1.5vw  0.4vw hsl(131, 91%, 47%);
+    }
+    
+    20%, 24%, 55% {        
+        box-shadow: none;
+    }    
+  }
