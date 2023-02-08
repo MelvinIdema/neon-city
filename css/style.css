@@ -50,8 +50,10 @@ main {
   inset 0 0 1rem var(--glow-color);
 
   position: relative;
+
   display: grid;
   place-items: center;
+
   top: 49%;
   left: 64%;
   width: 23%;
@@ -59,7 +61,7 @@ main {
 
   font-family: 'Raleway', cursive;
   letter-spacing: .2em;
-  font-size: 3em;
+  font-size: 3vw;
   text-transform: uppercase;
 
   cursor: pointer;
