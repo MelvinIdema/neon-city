@@ -16,11 +16,29 @@
 
 :root {
     --D-border: white;
-    --D-neon: blue;
+    --D-neon-color: rgb(0, 0, 255);
     --D-inner-highlight: inset 0 0 2em #4b7a8d;
     --D-highlight: 0 0 2em #4b7a8d;
     --D-highlight-hover: 0 0 4em #4b7a8d;
     --D-text-highlight: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em #4b7a8d;
+}
+
+/* If display-P3 is supported in the current browser */
+@supports (color: color(display-p3 1 1 1)) {
+    :root {
+        --D-neon-color: color(display-p3 1 0 1);
+    }
+}
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --D-border: white;
+        --D-neon-color: rgb(183, 0, 255);
+        --D-inner-highlight: inset 0 0 2em #764b8d;
+        --D-highlight: 0 0 2em #764b8d;
+        --D-highlight-hover: 0 0 4em #764b8d;
+        --D-text-highlight: 1px 1px 1px red, 0 0 1em purple, 0 0 0.2em #764b8d;
+    }
 }
 
 @font-face {
@@ -64,8 +82,8 @@ main {
 
 .dave {
     position: relative;
-  left: 28%;
-  top: 16%;
+    left: 28%;
+    top: 17%;
 }
 
 body > main > .bram {
@@ -251,9 +269,11 @@ body > main > .bram > span {
 }
 
 .dave {
-    width: 10em;
-    height: 17em;
-    padding: 2em 3.3em;
+    display: grid;
+    place-items: center;
+    width: 14%;
+    height: 35%;
+    padding: 1.3em 1.3em;
     box-shadow: var(--D-highlight);
     border: .1em solid var(--D-border);
     border-radius: .5em;
@@ -261,35 +281,18 @@ body > main > .bram > span {
 
 .dave:hover {
     box-shadow: var(--D-highlight-hover), var(--D-inner-highlight);
-    animation: M-flicker 1.5s infinite alternate;
+    animation: D-flicker 1.5s infinite alternate;
 }
 
 .dave:hover p {
     animation: none;
 }
 
-.dave::before, .dave::after  {
-    content: "";
-    position: absolute;
-    left: -4.2em;
-    width: 4em;
-    height: .5em;
-    background-color: #263248;
-}
-
-.dave::before {
-    top: 1em;
-}
-
-.dave::after {
-    bottom: 1em;
-}
-
 .dave p {
     font-family: Street Tahoma;
-    font-size: 3em;
+    font-size: 2.2em;
     text-align: center;
-    color: var(--D-neon);
+    color: var(--D-neon-color);    
     text-shadow: var(--D-text-highlight); 
     text-orientation: upright;
     writing-mode: vertical-rl;
@@ -305,15 +308,15 @@ body > main > .bram > span {
     }
 }
 
-@keyframes M-flicker {
+@keyframes D-flicker {
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {  
         box-shadow:
             0 0 .5em #fff,
             inset 0 0 .5em #fff,
-            0 0 2em var(--D-neon),
-            inset 0 0 2em var(--D-neon),
-            0 0 4em var(--D-neon),
-            inset 0 0 4em var(--D-neon);        
+            0 0 2em var(--D-neon-color),
+            inset 0 0 2em var(--D-neon-color),
+            0 0 4em var(--D-neon-color),
+            inset 0 0 4em var(--D-neon-color);        
     }
     
     20%, 24%, 55% {        
