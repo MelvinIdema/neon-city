@@ -114,8 +114,9 @@ body > main > .bram {
     width: 24%;
     height: 20%;
     animation: boxFlicker 1.5s infinite alternate;
-    border-radius: 1em;
-    box-shadow: 0 0 0.1vw  0.4vw hsl(131, 91%, 47%), 0 0 1.5vw  0.4vw hsl(131, 91%, 47%);
+    transition: .3s ease-in-out;
+    border-radius: .5em;
+    box-shadow: 0 0 0.1vw  0.2vw hsl(131, 91%, 47%), 0 0 1.5vw  0.2vw hsl(131, 91%, 47%);
 }
 
 body > main > .bram > span {
@@ -142,14 +143,14 @@ body > main > .bram > span {
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
   
         text-shadow:
-        0 0 1em hsl(115, 100%, 92%),
-        0 0 2em hsl(115, 100%, 92%),
-        0 0 19px hsl(115, 100%, 92%),
-        0 0 40px hsl(126, 86%, 65%),
-        0 0 80px hsl(126, 86%, 65%),
-        0 0 90px hsl(126, 86%, 65%),
-        0 0 100px hsl(126, 86%, 65%),
-        0 0 150px hsl(126, 86%, 65%);
+        0 0 1vw hsl(126, 86%, 65%),
+        0 0 1vw hsl(126, 86%, 65%),
+        0 0 1vw hsl(126, 86%, 65%),
+        0 0 4vw hsl(126, 86%, 65%),
+        0 0 8vw hsl(126, 86%, 65%),
+        0 0 9vw hsl(126, 86%, 65%),
+        0 0 10vw hsl(126, 86%, 65%),
+        0 0 15vw hsl(126, 86%, 65%);
     }
     
     20%, 24%, 55% {        
@@ -161,7 +162,7 @@ body > main > .bram > span {
     
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
   
-      box-shadow: 0 0 0.1vw  0.4vw hsl(131, 91%, 47%), 0 0 1.5vw  0.4vw hsl(131, 91%, 47%);
+      box-shadow: 0 0 0.1vw  0.2vw hsl(131, 91%, 47%), 0 0 1.5vw  0.2vw hsl(131, 91%, 47%);
     }
     
     20%, 24%, 55% {        
