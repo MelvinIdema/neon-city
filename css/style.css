@@ -40,3 +40,55 @@ main {
   top: 49.5%;
   left: 63.5%;
 }
+.bram {
+    margin: 0;
+    padding: 0;
+}
+
+.bram > main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bram > main > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 6em;
+    margin: 2em;
+    border-radius: 0.3em;
+    background-color: transparent;
+    border: 3px dotted hsl(160, 100%, 50%);
+    background: hsl(0, 0%, 18%);
+}
+
+.bram > main > div > h1 {
+    text-align: center;
+    animation: flicker 1.5s infinite alternate; 
+    margin: 0 auto;
+    font-family: open sans;
+    color: hsl(0, 0%, 92%);
+}
+
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px hsl(0, 0%, 100%),
+        0 0 11px hsl(0, 0%, 100%),
+        0 0 19px hsl(0, 0%, 100%),
+        0 0 40px hsl(160, 100%, 50%),
+        0 0 80px hsl(160, 100%, 50%),
+        0 0 90px hsl(160, 100%, 50%),
+        0 0 100px hsl(160, 100%, 50%),
+        0 0 150px hsl(160, 100%, 50%);
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
