@@ -1,0 +1,41 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #01262F;
+}
+
+main {
+  position: relative;
+  background-image: url("../assets/bg-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  aspect-ratio: 16/10;
+  margin: 0 auto;
+}
+
+.bram,
+.dave,
+.melvin {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: absolute;
+  background: white;
+}
+
+.bram {
+  left: 49%;
+  top: 24%;
+}
+
+.dave {
+  left: 28%;
+  top: 16%;
+}
+
+.melvin {
+  top: 49.5%;
+  left: 63.5%;
+}
