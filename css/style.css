@@ -116,7 +116,7 @@ body > main > .bram {
     animation: boxFlicker 1.5s infinite alternate;
     transition: .3s ease-in-out;
     border-radius: .5em;
-    box-shadow: 0 0 0.1vw  0.2vw hsl(131, 91%, 47%), 0 0 1.5vw  0.2vw hsl(131, 91%, 47%);
+    box-shadow: 0 0 0.1vw  0.2vw hsl(310, 91%, 47%), 0 0 1.5vw  0.2vw hsl(311, 91%, 47%);
 }
 
 body > main > .bram > span {
@@ -127,15 +127,34 @@ body > main > .bram > span {
     text-transform: uppercase;
     color: hsl(0, 0%, 92%);
     text-shadow: 
-        .1vw 0vw .25vw hsl(115, 100%, 92%), .2vw 0vw .25vw hsl(115, 100%, 92%), .4vw 0vw .25vw hsl(115, 100%, 92%), 
+    .1vw 0vw .25vw hsl(315, 100%, 92%), .2vw 0vw .25vw hsl(315, 100%, 92%), .4vw 0vw .25vw hsl(315, 100%, 92%), 
 
-        .1vw 0vw   0vw hsl(126, 86%, 65%), .2vw 0vw   0vw hsl(126, 86%, 65%), .4vw 0vw   0vw hsl(126, 86%, 65%),
-        .1vw 0vw  .1vw hsl(118, 86%, 65%), .2vw 0vw  .1vw hsl(118, 86%, 65%), .4vw 0vw  .1vw hsl(118, 86%, 65%),
-        .1vw 0vw   2vw hsl(116, 86%, 65%), .2vw 0vw   2vw hsl(116, 86%, 65%), .4vw 0vw   2vw hsl(116, 86%, 65%), 
+      .1vw 0vw   0vw hsl(302, 87%, 65%), .2vw 0vw   0vw hsl(302, 87%, 65%), .4vw 0vw   0vw hsl(302, 87%, 65%),
+      .1vw 0vw  .1vw hsl(308, 87%, 65%), .2vw 0vw  .1vw hsl(308, 87%, 65%), .4vw 0vw  .1vw hsl(308, 87%, 65%),
+      .1vw 0vw   2vw hsl(309, 87%, 65%), .2vw 0vw   2vw hsl(309, 87%, 65%), .4vw 0vw   2vw hsl(309, 87%, 65%), 
 
-        .1vw 0vw   1vw hsl(131, 91%, 47%), .2vw 0vw   1vw hsl(131, 91%, 47%), .4vw 0vw   5vw hsl(131, 91%, 47%), 
-        .1vw 0vw   5vw hsl(113, 91%, 47%), .2vw 0vw  20vw hsl(113, 91%, 47%), .4vw 0vw  10vw hsl(113, 91%, 47%),
-        .1vw 0vw  10vw hsl(106, 91%, 47%), .2vw 0vw  30vw hsl(106, 91%, 47%), .4vw 0vw  10vw hsl(106, 91%, 47%);
+      .1vw 0vw   1vw hsl(309, 91%, 47%), .2vw 0vw   1vw hsl(309, 91%, 47%), .4vw 0vw   5vw hsl(309, 91%, 47%), 
+      .1vw 0vw   5vw hsl(311, 91%, 47%), .2vw 0vw  20vw hsl(311, 91%, 47%), .4vw 0vw  10vw hsl(311, 91%, 47%),
+      .1vw 0vw  10vw hsl(319, 91%, 47%), .2vw 0vw  30vw hsl(319, 91%, 47%), .4vw 0vw  10vw hsl(319, 91%, 47%);
+}
+
+body > main > .bram:hover {
+  animation: none;
+  box-shadow: 0 0 0.1vw  0.2vw hsl(117, 91%, 47%), 0 0 1.5vw  0.2vw hsl(124, 91%, 47%);
+}
+
+body > main > .bram:hover span {
+  animation: none;
+  text-shadow: 
+  .1vw 0vw .25vw hsl(119, 100%, 92%), .2vw 0vw .25vw hsl(117, 100%, 92%), .4vw 0vw .25vw hsl(117, 100%, 92%), 
+
+  .1vw 0vw   0vw hsl(126, 86%, 65%), .2vw 0vw   0vw hsl(126, 86%, 65%), .4vw 0vw   0vw hsl(126, 86%, 65%),
+  .1vw 0vw  .1vw hsl(118, 86%, 65%), .2vw 0vw  .1vw hsl(118, 86%, 65%), .4vw 0vw  .1vw hsl(118, 86%, 65%),
+  .1vw 0vw   2vw hsl(116, 86%, 65%), .2vw 0vw   2vw hsl(116, 86%, 65%), .4vw 0vw   2vw hsl(116, 86%, 65%), 
+
+  .1vw 0vw   1vw hsl(126, 91%, 47%), .2vw 0vw   1vw hsl(125, 91%, 47%), .4vw 0vw   5vw hsl(140, 91%, 47%), 
+  .1vw 0vw   5vw hsl(124, 91%, 47%), .2vw 0vw  20vw hsl(121, 91%, 47%), .4vw 0vw  10vw hsl(130, 91%, 47%),
+  .1vw 0vw  10vw hsl(122, 91%, 47%), .2vw 0vw  30vw hsl(118, 91%, 47%), .4vw 0vw  10vw hsl(119, 91%, 47%);
 }
 
 @keyframes textFlicker {
@@ -143,14 +162,14 @@ body > main > .bram > span {
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
   
         text-shadow:
-        0 0 1vw hsl(126, 86%, 65%),
-        0 0 1vw hsl(126, 86%, 65%),
-        0 0 1vw hsl(126, 86%, 65%),
-        0 0 4vw hsl(126, 86%, 65%),
-        0 0 8vw hsl(126, 86%, 65%),
-        0 0 9vw hsl(126, 86%, 65%),
-        0 0 10vw hsl(126, 86%, 65%),
-        0 0 15vw hsl(126, 86%, 65%);
+        0 0 1vw hsl(308, 87%, 65%),
+        0 0 1vw hsl(307, 87%, 65%),
+        0 0 1vw hsl(310, 87%, 65%),
+        0 0 4vw hsl(314, 87%, 65%),
+        0 0 8vw hsl(309, 87%, 65%),
+        0 0 9vw hsl(311, 87%, 65%),
+        0 0 10vw hsl(314, 87%, 65%),
+        0 0 15vw hsl(308, 87%, 65%);
     }
     
     20%, 24%, 55% {        
@@ -162,7 +181,7 @@ body > main > .bram > span {
     
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
   
-      box-shadow: 0 0 0.1vw  0.2vw hsl(131, 91%, 47%), 0 0 1.5vw  0.2vw hsl(131, 91%, 47%);
+      box-shadow: 0 0 0.1vw  0.2vw hsl(307, 91%, 47%), 0 0 1.5vw  0.2vw hsl(307, 91%, 47%);
     }
     
     20%, 24%, 55% {        
