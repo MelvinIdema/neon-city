@@ -3,8 +3,11 @@
   src: url(../fonts/FunnySamurai.otf) format('opentype');
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@font-face {
+  font-family: sakurata;
+  src: url(../fonts/Sakurata-DOGnE.otf) format('opentype');
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -82,7 +85,7 @@ main {
   width: 23%;
   height: 15%;
 
-  font-family: 'samurai-font', cursive;
+  font-family: 'sakurata', cursive;
   letter-spacing: .2em;
   font-size: 3vw;
   text-transform: uppercase;
