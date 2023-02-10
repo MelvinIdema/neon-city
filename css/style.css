@@ -7,25 +7,36 @@
   font-family: sakurata;
   src: url(../fonts/Sakurata-DOGnE.otf) format('opentype');
 }
+ 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --D-border: white;
+    --D-neon: #f500f5;
+    --D-inner-highlight: inset 0 0 2em #764b8d;
+    --D-highlight: 0 0 2em #4b7a8d;
+    --D-highlight-hover: 0 0 4em #764b8d;
+    --D-text-highlight: 1px 1px 1px red, 0 0 1em #f500f5, 0 0 0.2em #764b8d;
+  }
+}
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --D-border: white;
-    --D-neon: blue;
-    --D-inner-highlight: inset 0 0 2em #4b7a8d;
-    --D-highlight: 0 0 2em #4b7a8d;
-    --D-highlight-hover: 0 0 4em #4b7a8d;
-    --D-text-highlight: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em #4b7a8d;
+  --D-border: white;
+  --D-neon: blue;
+  --D-inner-highlight: inset 0 0 2em #4b7a8d;
+  --D-highlight: 0 0 2em #4b7a8d;
+  --D-highlight-hover: 0 0 4em #4b7a8d;
+  --D-text-highlight: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em #4b7a8d;
 }
 
 @font-face {
-    font-family: Street Tahoma;
-    src: url(/fonts/HIROSHT.TTF);
+  font-family: Street Tahoma;
+  src: url(/fonts/HIROSHT.TTF);
 }
 
 html, body {
@@ -63,7 +74,7 @@ main {
 }
 
 .dave {
-    position: relative;
+  position: relative;
   left: 28%;
   top: 16%;
 }
@@ -95,13 +106,12 @@ main {
 
   color: var(--glow-color);
 
-  box-shadow:
-      0 0 .0625rem #fff,
-      inset 0 0 .125rem #fff,
-      0 0 .25rem var(--glow-color),
-      inset 0 0 .25rem var(--glow-color),
-      0 0 .5rem var(--glow-color),
-      inset 0 0 .5rem var(--glow-color);
+  box-shadow: 0 0 .0625rem #fff,
+  inset 0 0 .125rem #fff,
+  0 0 .25rem var(--glow-color),
+  inset 0 0 .25rem var(--glow-color),
+  0 0 .5rem var(--glow-color),
+  inset 0 0 .5rem var(--glow-color);
 
   animation-name: rotateHue;
   animation-iteration-count: infinite;
@@ -110,87 +120,80 @@ main {
 }
 
 body > main > .bram {
-    display: grid;
-    place-items: center;
-    left: 49.5%;
-    top: 24%;
-    width: 24%;
-    height: 20%;
-    animation: boxFlicker 1.5s infinite alternate;
-    transition: .3s ease-in-out;
-    border-radius: .5em;
-    box-shadow: 0 0 0.1vw  0.2vw hsl(310, 91%, 47%), 0 0 1.5vw  0.2vw hsl(311, 91%, 47%);
+  display: grid;
+  place-items: center;
+  left: 49.5%;
+  top: 24%;
+  width: 24%;
+  height: 20%;
+  animation: boxFlicker 1.5s infinite alternate;
+  transition: .3s ease-in-out;
+  border-radius: .5em;
+  box-shadow: 0 0 0.1vw 0.2vw hsl(310, 91%, 47%), 0 0 1.5vw 0.2vw hsl(311, 91%, 47%);
 }
 
 body > main > .bram > span {
-    font-size: 3em;
-    font-family: samurai-font, sans-serif;
-    letter-spacing: 0.1em;
-    animation: textFlicker 1.5s infinite alternate;
-    text-transform: uppercase;
-    color: hsl(0, 0%, 92%);
-    text-shadow: 
-    .1vw 0vw .25vw hsl(315, 100%, 92%), .2vw 0vw .25vw hsl(315, 100%, 92%), .4vw 0vw .25vw hsl(315, 100%, 92%), 
-
-      .1vw 0vw   0vw hsl(302, 87%, 65%), .2vw 0vw   0vw hsl(302, 87%, 65%), .4vw 0vw   0vw hsl(302, 87%, 65%),
-      .1vw 0vw  .1vw hsl(308, 87%, 65%), .2vw 0vw  .1vw hsl(308, 87%, 65%), .4vw 0vw  .1vw hsl(308, 87%, 65%),
-      .1vw 0vw   2vw hsl(309, 87%, 65%), .2vw 0vw   2vw hsl(309, 87%, 65%), .4vw 0vw   2vw hsl(309, 87%, 65%), 
-
-      .1vw 0vw   1vw hsl(309, 91%, 47%), .2vw 0vw   1vw hsl(309, 91%, 47%), .4vw 0vw   5vw hsl(309, 91%, 47%), 
-      .1vw 0vw   5vw hsl(311, 91%, 47%), .2vw 0vw  20vw hsl(311, 91%, 47%), .4vw 0vw  10vw hsl(311, 91%, 47%),
-      .1vw 0vw  10vw hsl(319, 91%, 47%), .2vw 0vw  30vw hsl(319, 91%, 47%), .4vw 0vw  10vw hsl(319, 91%, 47%);
+  font-size: 3em;
+  font-family: samurai-font, sans-serif;
+  letter-spacing: 0.1em;
+  animation: textFlicker 1.5s infinite alternate;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 92%);
+  text-shadow: .1vw 0vw .25vw hsl(315, 100%, 92%), .2vw 0vw .25vw hsl(315, 100%, 92%), .4vw 0vw .25vw hsl(315, 100%, 92%),
+  .1vw 0vw 0vw hsl(302, 87%, 65%), .2vw 0vw 0vw hsl(302, 87%, 65%), .4vw 0vw 0vw hsl(302, 87%, 65%),
+  .1vw 0vw .1vw hsl(308, 87%, 65%), .2vw 0vw .1vw hsl(308, 87%, 65%), .4vw 0vw .1vw hsl(308, 87%, 65%),
+  .1vw 0vw 2vw hsl(309, 87%, 65%), .2vw 0vw 2vw hsl(309, 87%, 65%), .4vw 0vw 2vw hsl(309, 87%, 65%),
+  .1vw 0vw 1vw hsl(309, 91%, 47%), .2vw 0vw 1vw hsl(309, 91%, 47%), .4vw 0vw 5vw hsl(309, 91%, 47%),
+  .1vw 0vw 5vw hsl(311, 91%, 47%), .2vw 0vw 20vw hsl(311, 91%, 47%), .4vw 0vw 10vw hsl(311, 91%, 47%),
+  .1vw 0vw 10vw hsl(319, 91%, 47%), .2vw 0vw 30vw hsl(319, 91%, 47%), .4vw 0vw 10vw hsl(319, 91%, 47%);
 }
 
 body > main > .bram:hover {
   animation: none;
-  box-shadow: 0 0 0.1vw  0.2vw hsl(117, 91%, 47%), 0 0 1.5vw  0.2vw hsl(124, 91%, 47%);
+  box-shadow: 0 0 0.1vw 0.2vw hsl(117, 91%, 47%), 0 0 1.5vw 0.2vw hsl(124, 91%, 47%);
 }
 
 body > main > .bram:hover span {
   animation: none;
-  text-shadow: 
-  .1vw 0vw .25vw hsl(119, 100%, 92%), .2vw 0vw .25vw hsl(117, 100%, 92%), .4vw 0vw .25vw hsl(117, 100%, 92%), 
-
-  .1vw 0vw   0vw hsl(126, 86%, 65%), .2vw 0vw   0vw hsl(126, 86%, 65%), .4vw 0vw   0vw hsl(126, 86%, 65%),
-  .1vw 0vw  .1vw hsl(118, 86%, 65%), .2vw 0vw  .1vw hsl(118, 86%, 65%), .4vw 0vw  .1vw hsl(118, 86%, 65%),
-  .1vw 0vw   2vw hsl(116, 86%, 65%), .2vw 0vw   2vw hsl(116, 86%, 65%), .4vw 0vw   2vw hsl(116, 86%, 65%), 
-
-  .1vw 0vw   1vw hsl(126, 91%, 47%), .2vw 0vw   1vw hsl(125, 91%, 47%), .4vw 0vw   5vw hsl(140, 91%, 47%), 
-  .1vw 0vw   5vw hsl(124, 91%, 47%), .2vw 0vw  20vw hsl(121, 91%, 47%), .4vw 0vw  10vw hsl(130, 91%, 47%),
-  .1vw 0vw  10vw hsl(122, 91%, 47%), .2vw 0vw  30vw hsl(118, 91%, 47%), .4vw 0vw  10vw hsl(119, 91%, 47%);
+  text-shadow: .1vw 0vw .25vw hsl(119, 100%, 92%), .2vw 0vw .25vw hsl(117, 100%, 92%), .4vw 0vw .25vw hsl(117, 100%, 92%),
+  .1vw 0vw 0vw hsl(126, 86%, 65%), .2vw 0vw 0vw hsl(126, 86%, 65%), .4vw 0vw 0vw hsl(126, 86%, 65%),
+  .1vw 0vw .1vw hsl(118, 86%, 65%), .2vw 0vw .1vw hsl(118, 86%, 65%), .4vw 0vw .1vw hsl(118, 86%, 65%),
+  .1vw 0vw 2vw hsl(116, 86%, 65%), .2vw 0vw 2vw hsl(116, 86%, 65%), .4vw 0vw 2vw hsl(116, 86%, 65%),
+  .1vw 0vw 1vw hsl(126, 91%, 47%), .2vw 0vw 1vw hsl(125, 91%, 47%), .4vw 0vw 5vw hsl(140, 91%, 47%),
+  .1vw 0vw 5vw hsl(124, 91%, 47%), .2vw 0vw 20vw hsl(121, 91%, 47%), .4vw 0vw 10vw hsl(130, 91%, 47%),
+  .1vw 0vw 10vw hsl(122, 91%, 47%), .2vw 0vw 30vw hsl(118, 91%, 47%), .4vw 0vw 10vw hsl(119, 91%, 47%);
 }
 
 @keyframes textFlicker {
-    
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-  
-        text-shadow:
-        0 0 1vw hsl(308, 87%, 65%),
-        0 0 1vw hsl(307, 87%, 65%),
-        0 0 1vw hsl(310, 87%, 65%),
-        0 0 4vw hsl(314, 87%, 65%),
-        0 0 8vw hsl(309, 87%, 65%),
-        0 0 9vw hsl(311, 87%, 65%),
-        0 0 10vw hsl(314, 87%, 65%),
-        0 0 15vw hsl(308, 87%, 65%);
-    }
-    
-    20%, 24%, 55% {        
-        text-shadow: none;
-    }    
+
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+    text-shadow: 0 0 1vw hsl(308, 87%, 65%),
+    0 0 1vw hsl(307, 87%, 65%),
+    0 0 1vw hsl(310, 87%, 65%),
+    0 0 4vw hsl(314, 87%, 65%),
+    0 0 8vw hsl(309, 87%, 65%),
+    0 0 9vw hsl(311, 87%, 65%),
+    0 0 10vw hsl(314, 87%, 65%),
+    0 0 15vw hsl(308, 87%, 65%);
   }
 
-  @keyframes boxFlicker {
-    
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-  
-      box-shadow: 0 0 0.1vw  0.2vw hsl(307, 91%, 47%), 0 0 1.5vw  0.2vw hsl(307, 91%, 47%);
-    }
-    
-    20%, 24%, 55% {        
-        box-shadow: none;
-    }    
+  20%, 24%, 55% {
+    text-shadow: none;
   }
+}
+
+@keyframes boxFlicker {
+
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+    box-shadow: 0 0 0.1vw 0.2vw hsl(307, 91%, 47%), 0 0 1.5vw 0.2vw hsl(307, 91%, 47%);
+  }
+
+  20%, 24%, 55% {
+    box-shadow: none;
+  }
+}
 
 .melvin:hover {
   animation-name: flicker;
@@ -201,13 +204,12 @@ body > main > .bram:hover span {
 
 #melvin:checked + .melvin {
   animation: none;
-  box-shadow:
-      0 0 0rem #fff,
-      inset 0 0 .05rem #fff,
-      0 0 .125rem black,
-      inset 0 0 .125rem black,
-      0 0 .25rem black,
-      inset 0 0 .25rem black;
+  box-shadow: 0 0 0rem #fff,
+  inset 0 0 .05rem #fff,
+  0 0 .125rem black,
+  inset 0 0 .125rem black,
+  0 0 .25rem black,
+  inset 0 0 .25rem black;
   color: black;
 }
 
@@ -272,13 +274,12 @@ body > main > .bram:hover span {
 @keyframes flicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
     color: var(--glow-color);
-    box-shadow:
-        0 0 .0625rem #fff,
-        inset 0 0 .125rem #fff,
-        0 0 .25rem var(--glow-color),
-        inset 0 0 .25rem var(--glow-color),
-        0 0 .5rem var(--glow-color),
-        inset 0 0 .5rem var(--glow-color);
+    box-shadow: 0 0 .0625rem #fff,
+    inset 0 0 .125rem #fff,
+    0 0 .25rem var(--glow-color),
+    inset 0 0 .25rem var(--glow-color),
+    0 0 .5rem var(--glow-color),
+    inset 0 0 .5rem var(--glow-color);
   }
   20%, 24%, 55% {
     box-shadow: none;
@@ -287,73 +288,87 @@ body > main > .bram:hover span {
 }
 
 .dave {
-    width: 10em;
-    height: 17em;
-    padding: 2em 3.3em;
-    box-shadow: var(--D-highlight);
-    border: .1em solid var(--D-border);
-    border-radius: .5em;
+  width: 10em;
+  height: 17em;
+  padding: 2em 3.3em;
+  box-shadow: var(--D-highlight);
+  border: .1em solid var(--D-border);
+  border-radius: .5em;
 }
 
 .dave:hover {
-    box-shadow: var(--D-highlight-hover), var(--D-inner-highlight);
-    animation: M-flicker 1.5s infinite alternate;
+  box-shadow: var(--D-highlight-hover), var(--D-inner-highlight);
+  animation: M-flicker 1.5s infinite alternate;
 }
 
 .dave:hover p {
-    animation: none;
+  animation: none;
 }
 
-.dave::before, .dave::after  {
-    content: "";
-    position: absolute;
-    left: -4.2em;
-    width: 4em;
-    height: .5em;
-    background-color: #263248;
+.dave::before, .dave::after {
+  content: "";
+  position: absolute;
+  left: -4.2em;
+  width: 4em;
+  height: .5em;
+  background-color: #263248;
 }
 
 .dave::before {
-    top: 1em;
+  top: 1em;
 }
 
 .dave::after {
-    bottom: 1em;
+  bottom: 1em;
 }
 
 .dave p {
-    font-family: Street Tahoma;
-    font-size: 3em;
-    text-align: center;
-    color: var(--D-neon);
-    text-shadow: var(--D-text-highlight); 
-    text-orientation: upright;
-    writing-mode: vertical-rl;
-    animation: rotateHue 3s infinite;
+  font-family: Street Tahoma;
+  font-size: 3em;
+  text-align: center;
+  color: var(--D-neon);
+  text-shadow: var(--D-text-highlight);
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+  animation: rotateHue 3s infinite;
 }
 
 @keyframes rotateHue {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
 
 @keyframes M-flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {  
-        box-shadow:
-            0 0 .5em #fff,
-            inset 0 0 .5em #fff,
-            0 0 2em var(--D-neon),
-            inset 0 0 2em var(--D-neon),
-            0 0 4em var(--D-neon),
-            inset 0 0 4em var(--D-neon);        
-    }
-    
-    20%, 24%, 55% {        
-        text-shadow: none;
-        box-shadow: none;
-    }    
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow: 0 0 .5em #fff,
+    inset 0 0 .5em #fff,
+    0 0 2em var(--D-neon),
+    inset 0 0 2em var(--D-neon),
+    0 0 4em var(--D-neon),
+    inset 0 0 4em var(--D-neon);
+  }
+
+  20%, 24%, 55% {
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.view-process-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 16px 32px;
+  background: #263248;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+  z-index: 2;
+  animation-name: boxFlicker;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
